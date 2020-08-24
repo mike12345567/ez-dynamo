@@ -18,7 +18,7 @@ let userTable = new Table("usersTable").primary("username").sort("lastLogin").sc
 async function runTest() {
   let date = Date.now();
   await userTable.validate().create();
-  await userTable.put().object({username: "mdrury", lastLogin: date, email: "test@test.com", admin: true}).run();
+  await userTable.put({username: "mdrury", lastLogin: date, email: "test@test.com", admin: true}).run();
   return await userTable.get().primary("mdrury").sort(date).properties(["email", "admin", "username"]).run();
 }
 

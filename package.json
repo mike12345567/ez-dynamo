@@ -4,12 +4,16 @@
   "description": "A library for easily interacting with DynamoDB, built ontop of the DynamoDB DocumentClient.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint '**/*.js'"
   },
   "author": "Michael Drury",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.732.0",
     "joi": "^17.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0"
   }
 }
