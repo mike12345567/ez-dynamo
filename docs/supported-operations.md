@@ -33,7 +33,9 @@ This module allows getting items from a DynamoDB table and it supports the follo
 This module allows updating items within a DynamoDB table and it supports the following components of the update call:
 * TableName - the table that the update call is to take place in.
 * Key - the key of the entry which is to be updated.
-* UpdateExpression - this string is built by the update operation, reducing the complexity of building it.
+* UpdateExpression - this string is built by the update operation, reducing the complexity of building it. It should be
+noted initially some of the complex functionality of this like incrementing and decrementing, list appending will not be
+supported.
 * ReturnValues - all values are supported in some manner, allowing returning the previous state of the database entry.
 
 The following is not yet fully supported:
