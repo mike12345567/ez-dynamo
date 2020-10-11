@@ -35,7 +35,7 @@ Some some quick examples! To get the full ins and outs of this look into the `ex
 I have fleshed out some full examples of how this stuff works.
 
 So, lets see how easy it is to create a table, write something and then get it back:
-```
+```javascript
 let userTable = new Table("usersTable")
   .primary("username")
   .sort("lastLogin")
