@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/.bin/eslint '**/*.js'"
+    "lint": "eslint '**/*.js'",
+    "format": "prettier --write \"{,!(node_modules)/**/}*.js\""
   },
   "author": "Michael Drury",
   "license": "MIT",
@@ -14,6 +15,7 @@
     "joi": "^17.2.0"
   },
   "devDependencies": {
-    "eslint": "^7.7.0"
+    "eslint": "^7.7.0",
+    "prettier": "^1.19.1"
   }
 }

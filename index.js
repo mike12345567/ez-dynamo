@@ -3,7 +3,7 @@ let schema = require("./lib/schema");
 let dynamo = require("./lib/dynamo");
 
 function setRegion(region) {
-  dynamo.AWS.config.update({region});
+  dynamo.AWS.config.update({ region });
 }
 
 module.exports = {
@@ -23,7 +23,7 @@ module.exports = {
   },
   configureFromArg: function(region, endpoint, secretAccessKey, accessKeyId) {
     setRegion(region);
-    dynamo.AWS.config.update({secretAccessKey, accessKeyId});
+    dynamo.AWS.config.update({ secretAccessKey, accessKeyId });
     dynamo.init(endpoint);
   }
 };
