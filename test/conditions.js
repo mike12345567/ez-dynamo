@@ -14,7 +14,12 @@ describe("Test some basic conditions", () => {
   });
 
   it("should successfully create an equality condition", () => {
-    condition.property("test").equals(1).and().property("test2").equals(2);
+    condition
+      .property("test")
+      .equals(1)
+      .and()
+      .property("test2")
+      .equals(2);
     const params = basicWrite.getParams();
     params.ExpressionAttributeValues[":cnd101"].should.equal(1);
     params.ExpressionAttributeValues[":cnd103"].should.equal(2);

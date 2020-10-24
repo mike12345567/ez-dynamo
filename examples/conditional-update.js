@@ -1,21 +1,31 @@
 const userTable = require("./create-table");
 
+const date = Date.now();
+const USER_OBJ = {
+  username: "mdrury",
+  lastLogin: date,
+  email: "test@test.com",
+  admin: true
+};
+const wait = timeout => new Promise(resolve => setTimeout(resolve, timeout));
+
 async function runTest() {
-  const date = Date.now();
   await userTable.validate().create();
-  await userTable.put({ username: "mdrury", lastLogin: date, email: "test@test.com", admin: true }).run();
+  await wait(1000);
+  await userTable.put(USER_OBJ).run();
   await userTable
     .update()
     .primary("mdrury")
     .sort(date)
-    .setProperty("preferences", { testing: true })
-    .removeProperty("admin")
+    .addToProperty("smartPlugs", "UK")
+    .onlyIf()
+    .property("lastLogin")
+    .equals(date)
     .run();
   return await userTable
     .get()
     .primary("mdrury")
     .sort(date)
-    .properties(["email", "admin", "username", "preferences"])
     .run();
 }
 

@@ -1,10 +1,11 @@
-let ezDynamo = require("../index"),
+const ezDynamo = require("../index"),
   schema = ezDynamo.schema,
   Table = ezDynamo.Table;
 
-ezDynamo.configure("eu-west-1", "http://localhost:8123");
+// mocking credentials for local dynamo
+ezDynamo.configureFromArg("eu-west-1", "http://localhost:8123", "mock", "mock");
 
-let userTable = new Table("usersTable")
+const userTable = new Table("usersTable")
   .primary("username")
   .sort("lastLogin")
   .schema({
@@ -26,13 +27,9 @@ async function runTest() {
 }
 
 if (require.main === module) {
-  runTest()
-    .then(() => {
-      console.log("Table created successfully!");
-    })
-    .catch(err => {
-      console.error("Failed for reason: " + JSON.stringify(err));
-    });
+  runTest().then(() => {
+    console.log("Table created successfully!");
+  });
 }
 
 module.exports = userTable;
