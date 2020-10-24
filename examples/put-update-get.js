@@ -3,7 +3,9 @@ const userTable = require("./create-table");
 async function runTest() {
   const date = Date.now();
   await userTable.validate().create();
-  await userTable.put({ username: "mdrury", lastLogin: date, email: "test@test.com", admin: true }).run();
+  await userTable
+    .put({ username: "mdrury", lastLogin: date, email: "test@test.com", admin: true })
+    .run();
   await userTable
     .update()
     .primary("mdrury")
