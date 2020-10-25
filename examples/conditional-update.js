@@ -17,10 +17,10 @@ async function runTest() {
     .update()
     .primary("mdrury")
     .sort(date)
-    .addToProperty("smartPlugs", "UK")
+    .add("smartPlugs", "UK")
     .onlyIf()
     .property("lastLogin")
-    .equals(date)
+    .lessThanEqual(Date.now())
     .run();
   return await userTable
     .get()
