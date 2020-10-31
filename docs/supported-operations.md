@@ -17,11 +17,6 @@ This module allows putting items to a Dynamo table and it supports the following
 * Item - the item which is to be written, a JSON object.
 * ReturnValues - if overwrite is enabled then any old object that is overwritten during a put will be returned.
 
-The following is not yet fully supported:
-* ConditionExpression, ExpressionAttributeNames and ExpressionAttributeValues - these parameters are used to generate
-conditional puts, e.g. under certain circumstances the put will complete, otherwise it will fail. This will be supported
-in the future as it can be very useful for confirming the state of an entry before writing in an atomic manner.
-
 ### Get item
 This module allows getting items from a DynamoDB table and it supports the following components of the get call:
 * TableName - the table which the item will be retrieved from.
@@ -37,8 +32,3 @@ This module allows updating items within a DynamoDB table and it supports the fo
 noted initially some of the complex functionality of this like incrementing and decrementing, list appending will not be
 supported.
 * ReturnValues - all values are supported in some manner, allowing returning the previous state of the database entry.
-
-The following is not yet fully supported:
-* ConditionExpression, ExpressionAttributeNames and ExpressionAttributeValues - these parameters are used to generate
-conditional updates, e.g. under certain circumstances the update will complete, otherwise it will fail. This will be supported
-in the future as it can be very useful for confirming the state of an entry before writing in an atomic manner.
