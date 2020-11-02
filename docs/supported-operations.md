@@ -73,3 +73,10 @@ Once all read/write operations have been completed as part of the batch write/re
 ### Table operations
 Still to be supported:
 * Returning a list of currently configured indexes, the name and keys of them.
+
+### Ideas
+An idea from [Andrew Kingston](https://github.com/aptkingston) was to use a callback for
+`onlyIf()` calls, like `onlyIf(operation => operation.property().equals())` as this provides a
+few key benefits, the ability to reuse condition functions, its less opinionated in terms of
+where the `onlyIf` should be placed in the call and it is easier to read in terms of indentation
+after linters have been applied. 
