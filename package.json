@@ -1,6 +1,6 @@
 {
   "name": "ez-dynamo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A library for easily interacting with DynamoDB, built ontop of the DynamoDB DocumentClient.",
   "main": "index.js",
   "scripts": {
