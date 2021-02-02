@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dynamo:start": "./localDynamo.sh start",
+    "dynamo:stop": "./localDynamo.sh stop",
+    "dynamo:clear": "./localDynamo.sh clear",
     "lint": "eslint '**/*.js'",
     "format": "prettier --write \"{,!(node_modules)/**/}*.js\""
   },

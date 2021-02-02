@@ -105,3 +105,4 @@ dist
 
 # custom files
 .idea/
+local/
