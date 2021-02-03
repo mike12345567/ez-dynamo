@@ -1,4 +1,4 @@
-# Ez (Easy) DynamoDB
+# Ez DynamoDB
 
 Thanks for having a look at my library for simplifying your Node DynamoDB usage!
 
