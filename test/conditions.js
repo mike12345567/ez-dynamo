@@ -2,7 +2,7 @@ let chai = require("chai");
 let should = chai.should();
 
 // use the core operation to test against
-const BasicWrite = require("../lib/operations/basic-write");
+const BasicWrite = require("../lib/operations/base/basic-write");
 const Condition = require("../lib/operations/conditions");
 
 describe("Test some basic conditions", () => {
