@@ -7,14 +7,15 @@ async function runTest() {
   await userTable.validate().create();
   let adminCount = 3;
   for (let username of usernames) {
-    const admin = adminCount-- > 0
-    await userTable
-      .put({ username, lastLogin: date, email: "test@test.com", admin })
-      .run();
+    const admin = adminCount-- > 0;
+    await userTable.put({ username, lastLogin: date, email: "test@test.com", admin }).run();
   }
   let operation = userTable.scan().limit(1);
   // currently have to attach filter separately
-  operation.where().property("admin").equals(true);
+  operation
+    .where()
+    .property("admin")
+    .equals(true);
   let items = [];
   do {
     items = items.concat(await operation.run());
